@@ -9,8 +9,6 @@ const { results, quiz, correctAnswers } = defineProps([
 const wrongAnswers = quiz.questions.filter(
 	(question) => !results[question.id - 1]
 )
-console.log(wrongAnswers[0].options[0].label)
-// wrongAnswer.option.label
 
 const router = useRouter()
 </script>
@@ -19,7 +17,10 @@ const router = useRouter()
 	<div>
 		<div class="hero-wrapper">
 			<h1>You have completed {{ quiz.name }} Quiz!</h1>
-			<h2>Correct Answers: {{ correctAnswers }}</h2>
+			<h2>
+				You have answered
+				{{ ((correctAnswers / quiz.questions.length) * 100).toFixed(1) }}%
+			</h2>
 		</div>
 		<div>
 			<button @click="router.push(`/`)">Go Home</button>
@@ -32,18 +33,17 @@ const router = useRouter()
 		>
 			<h3>
 				{{
-					quiz.questions.find((question) =>
-						question.text.includes(wrongAnswer.text)
-					).id
+					quiz.questions.find((question) => question.text == wrongAnswer.text)
+						.id
 				}}. {{ wrongAnswer.text }}
 			</h3>
-			<p
+			<div
 				:class="{ 'correct-option': option.isCorrect }"
 				v-for="(option, index) in wrongAnswer.options"
 				:key="index"
 			>
 				{{ option.label }}: {{ option.text }}
-			</p>
+			</div>
 		</div>
 	</div>
 </template>

@@ -4,8 +4,7 @@ const { quiz, questionsAnswered } = defineProps(['quiz', 'questionsAnswered'])
 
 <template>
 	<div>
-		<h1>Quiz Header</h1>
-		<h2>{{ quiz.name }}</h2>
-		<h2>{{ questionsAnswered }} / {{ quiz.questions.length }}</h2>
+		<h1>{{ quiz.name }}</h1>
+		<h3>{{ questionsAnswered }}/{{ quiz.questions.length }} questions</h3>
 	</div>
 </template>

@@ -40,17 +40,22 @@ function sendResult(isCorrect) {
 				:quiz="quiz"
 				:questionsAnswered="questionIndex"
 			/>
-			<Question
-				v-if="!showResultsModal"
-				:question="quiz.questions[questionIndex]"
-				@sendResult="sendResult"
-			/>
-			<ResultsModal
-				v-if="showResultsModal"
-				:results="results"
-				:quiz="quiz"
-				:correctAnswers="correctAnswers"
-			/>
+			<Transition name="bounce" mode="out-in">
+				<Question
+					:key="questionIndex"
+					v-if="!showResultsModal"
+					:question="quiz.questions[questionIndex]"
+					@sendResult="sendResult"
+				/>
+			</Transition>
+			<Transition name="results-fade">
+				<ResultsModal
+					v-if="showResultsModal"
+					:results="results"
+					:quiz="quiz"
+					:correctAnswers="correctAnswers"
+				/>
+			</Transition>
 		</div>
 		<PageNotFound v-else :text-message="`Quiz Not Found`" />
 	</div>
@@ -64,5 +69,34 @@ function sendResult(isCorrect) {
 	align-items: center;
 	margin-top: 1rem;
 	font-size: 2rem;
+	transition: all 0.5s ease-in-out;
+}
+
+.results-fade-enter-active,
+.results-fade-leave-active {
+	transition: opacity 1s ease-out;
+}
+
+.results-fade-enter-from,
+.results-fade-leave-to {
+	opacity: 0;
+}
+
+.bounce-enter-active {
+	animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+	animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.13);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 </style>

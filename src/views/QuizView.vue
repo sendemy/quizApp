@@ -61,7 +61,7 @@ function sendResult(isCorrect) {
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .quiz-wrapper {
 	display: flex;
 	justify-content: center;

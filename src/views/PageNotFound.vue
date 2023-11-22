@@ -14,7 +14,7 @@ const router = useRouter()
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .page-not-found-wrapper {
 	display: flex;
 	flex-direction: column;

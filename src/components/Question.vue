@@ -24,7 +24,7 @@ const sendResult = (isCorrect) => {
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .question-wrapper {
 	margin-top: 1.5rem;
 }
@@ -43,10 +43,11 @@ const sendResult = (isCorrect) => {
 	padding-right: 1.5rem;
 	margin: 0 auto;
 	transition: 0.4s all;
-}
-.option:hover {
-	cursor: pointer;
-	transform: scale(1.1);
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.1);
+	}
 }
 
 p {

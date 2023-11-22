@@ -19,7 +19,7 @@ watch([search], () => {
 <template>
 	<div>
 		<header>
-			<h1>Quizes</h1>
+			<h1>Search</h1>
 			<input v-model.trim="search" type="text" placeholder="Find..." />
 		</header>
 		<div class="options-container">
@@ -33,26 +33,25 @@ watch([search], () => {
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
 	margin-bottom: 10px;
 	margin-top: 30px;
 	display: flex;
 	align-items: center;
-}
 
-header h1 {
-	font-weight: bold;
-	margin-right: 30px;
-}
+	h1 {
+		font-weight: bold;
+		margin-right: 30px;
+	}
 
-header input {
-	border: none;
-	background-color: rgba(128, 128, 128, 0.1);
-	padding: 10px;
-	border-radius: 5px;
+	input {
+		border: none;
+		background-color: rgba(128, 128, 128, 0.1);
+		padding: 10px;
+		border-radius: 5px;
+	}
 }
-
 .options-container {
 	display: flex;
 	flex-wrap: wrap;

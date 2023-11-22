@@ -48,7 +48,7 @@ const router = useRouter()
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero-wrapper {
 	font-size: 2rem;
 }

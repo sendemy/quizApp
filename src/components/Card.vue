@@ -1,6 +1,6 @@
 <script setup>
 const props = defineProps(['quiz'])
-console.log('state updated')
+// console.log('state updated')
 </script>
 
 <template>

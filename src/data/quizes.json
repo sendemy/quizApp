@@ -292,5 +292,201 @@
 				]
 			}
 		]
+	},
+	{
+		"id": 4,
+		"img": "https://marvel-b1-cdn.bc0a.com/f00000000026007/resilienteducator.com/wp-content/uploads/2012/11/AdobeStock_60467600_cup.jpg",
+		"name": "Informatics",
+		"difficulty": 1,
+		"questions": [
+			{
+				"id": 1,
+				"text": "8 ÷ 2(2 + 2)",
+				"options": [
+					{
+						"id": 1,
+						"label": "A",
+						"text": "16",
+						"isCorrect": true
+					},
+					{
+						"id": 2,
+						"label": "B",
+						"text": "1",
+						"isCorrect": false
+					},
+					{
+						"id": 3,
+						"label": "C",
+						"text": "8",
+						"isCorrect": false
+					},
+					{
+						"id": 4,
+						"label": "D",
+						"text": "24",
+						"isCorrect": false
+					}
+				]
+			},
+			{
+				"id": 2,
+				"text": "sqrt(64) * 9",
+				"options": [
+					{
+						"id": 1,
+						"label": "A",
+						"text": "4",
+						"isCorrect": false
+					},
+					{
+						"id": 2,
+						"label": "B",
+						"text": "81",
+						"isCorrect": false
+					},
+					{
+						"id": 3,
+						"label": "C",
+						"text": "72",
+						"isCorrect": true
+					},
+					{
+						"id": 4,
+						"label": "D",
+						"text": "144",
+						"isCorrect": false
+					}
+				]
+			},
+			{
+				"id": 3,
+				"text": "3 + 3 x 3 ÷ 3 - 3",
+				"options": [
+					{
+						"id": 1,
+						"label": "A",
+						"text": "3",
+						"isCorrect": true
+					},
+					{
+						"id": 2,
+						"label": "B",
+						"text": "1",
+						"isCorrect": false
+					},
+					{
+						"id": 3,
+						"label": "C",
+						"text": "9",
+						"isCorrect": false
+					},
+					{
+						"id": 4,
+						"label": "D",
+						"text": "16",
+						"isCorrect": false
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": 5,
+		"img": "https://marvel-b1-cdn.bc0a.com/f00000000026007/resilienteducator.com/wp-content/uploads/2012/11/AdobeStock_60467600_cup.jpg",
+		"name": "English",
+		"difficulty": 4,
+		"questions": [
+			{
+				"id": 1,
+				"text": "8 ÷ 2(2 + 2)",
+				"options": [
+					{
+						"id": 1,
+						"label": "A",
+						"text": "16",
+						"isCorrect": true
+					},
+					{
+						"id": 2,
+						"label": "B",
+						"text": "1",
+						"isCorrect": false
+					},
+					{
+						"id": 3,
+						"label": "C",
+						"text": "8",
+						"isCorrect": false
+					},
+					{
+						"id": 4,
+						"label": "D",
+						"text": "24",
+						"isCorrect": false
+					}
+				]
+			},
+			{
+				"id": 2,
+				"text": "sqrt(64) * 9",
+				"options": [
+					{
+						"id": 1,
+						"label": "A",
+						"text": "4",
+						"isCorrect": false
+					},
+					{
+						"id": 2,
+						"label": "B",
+						"text": "81",
+						"isCorrect": false
+					},
+					{
+						"id": 3,
+						"label": "C",
+						"text": "72",
+						"isCorrect": true
+					},
+					{
+						"id": 4,
+						"label": "D",
+						"text": "144",
+						"isCorrect": false
+					}
+				]
+			},
+			{
+				"id": 3,
+				"text": "3 + 3 x 3 ÷ 3 - 3",
+				"options": [
+					{
+						"id": 1,
+						"label": "A",
+						"text": "3",
+						"isCorrect": true
+					},
+					{
+						"id": 2,
+						"label": "B",
+						"text": "1",
+						"isCorrect": false
+					},
+					{
+						"id": 3,
+						"label": "C",
+						"text": "9",
+						"isCorrect": false
+					},
+					{
+						"id": 4,
+						"label": "D",
+						"text": "16",
+						"isCorrect": false
+					}
+				]
+			}
+		]
 	}
 ]

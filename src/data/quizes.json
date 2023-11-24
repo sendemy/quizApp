@@ -295,7 +295,7 @@
 	},
 	{
 		"id": 4,
-		"img": "https://marvel-b1-cdn.bc0a.com/f00000000026007/resilienteducator.com/wp-content/uploads/2012/11/AdobeStock_60467600_cup.jpg",
+		"img": "https://prod-discovery.edx-cdn.org/media/course/image/a7f1e3cc-898d-4ee0-90d2-2f0b489e2346-a610d27ba35a.small.jpg",
 		"name": "Informatics",
 		"difficulty": 1,
 		"questions": [
@@ -393,7 +393,7 @@
 	},
 	{
 		"id": 5,
-		"img": "https://marvel-b1-cdn.bc0a.com/f00000000026007/resilienteducator.com/wp-content/uploads/2012/11/AdobeStock_60467600_cup.jpg",
+		"img": "https://images.squarespace-cdn.com/content/v1/572a1e9c62cd94796c56e4c7/1542649625004-HGB1COGKKY158JSDR3HK/English1-1-800x539.jpg",
 		"name": "English",
 		"difficulty": 4,
 		"questions": [

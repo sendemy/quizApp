@@ -1,70 +1,73 @@
 <script setup>
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { decodeCredential } from 'vue3-google-login'
 
 const router = useRouter()
+const user = ref(null)
+
+function callback(response) {
+	user.value = decodeCredential(response.credential)
+	console.log(decodeCredential(response.credential))
+}
 </script>
 
 <template>
 	<header>
 		<div class="logo-container">
 			<svg
-				width="37"
-				height="40"
-				viewBox="0 0 37 40"
+				width="29"
+				height="32"
+				viewBox="0 0 29 32"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<line
-					y1="-5"
-					x2="18.842"
-					y2="-5"
-					transform="matrix(0.580486 0.81427 -0.813195 0.581991 17.5 24.6575)"
+					x1="17.6175"
+					y1="19.8237"
+					x2="25.6175"
+					y2="30.8237"
 					stroke="#252422"
-					stroke-width="10"
+					stroke-width="4"
 				/>
 				<path
-					d="M35 17.5342C35 27.2181 27.165 35.0685 17.5 35.0685C7.83502 35.0685 0 27.2181 0 17.5342C0 7.85035 7.83502 0 17.5 0C27.165 0 35 7.85035 35 17.5342ZM3.5 17.5342C3.5 25.2814 9.76801 31.5616 17.5 31.5616C25.232 31.5616 31.5 25.2814 31.5 17.5342C31.5 9.78713 25.232 3.50685 17.5 3.50685C9.76801 3.50685 3.5 9.78713 3.5 17.5342Z"
+					d="M29 14.4658C29 22.455 22.5081 28.9316 14.5 28.9316C6.49187 28.9316 0 22.455 0 14.4658C0 6.47655 6.49187 0 14.5 0C22.5081 0 29 6.47655 29 14.4658ZM2.9 14.4658C2.9 20.8572 8.0935 26.0384 14.5 26.0384C20.9065 26.0384 26.1 20.8572 26.1 14.4658C26.1 8.07439 20.9065 2.89316 14.5 2.89316C8.0935 2.89316 2.9 8.07439 2.9 14.4658Z"
 					fill="#EB5E28"
 				/>
 				<line
 					y1="-6"
-					x2="2.2668"
+					x2="2"
 					y2="-6"
-					transform="matrix(0.813172 -0.582024 0.580519 0.814247 26.25 34.196)"
+					transform="matrix(0.814359 -0.580362 0.582181 0.81306 24 31.1606)"
 					stroke="#252422"
 					stroke-width="12"
 				/>
 				<ellipse
-					cx="18.0469"
-					cy="10.959"
-					rx="4.375"
-					ry="4.38356"
+					cx="12.625"
+					cy="9.61644"
+					rx="3.625"
+					ry="3.61644"
 					fill="#252422"
 				/>
 				<ellipse
-					cx="17.7734"
-					cy="9.5891"
-					rx="1.36719"
-					ry="1.36986"
+					cx="12.3984"
+					cy="8.4861"
+					rx="1.13281"
+					ry="1.13014"
 					fill="white"
 				/>
 			</svg>
 		</div>
-		<div class="btns-container">
+		<div class="links-container">
 			<div @click="router.push('/')">Quizes</div>
-			<div>Something</div>
+			<div v-if="user" @click="router.push('/create-quiz')">Create Quiz</div>
 		</div>
 		<div class="profile-container">
-			<span>Profile</span>
-			<svg
-				width="32"
-				height="32"
-				viewBox="0 0 32 32"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<circle cx="16" cy="16" r="16" fill="#D9D9D9" />
-			</svg>
+			<div v-if="user" class="user-logged-in" @click="router.push('profile')">
+				<span>{{ user.given_name }}</span>
+				<img :src="user.picture" alt="Profile Picture" width="32" height="32" />
+			</div>
+			<GoogleLogin v-else :callback="callback" />
 		</div>
 	</header>
 </template>
@@ -76,45 +79,49 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	font-size: 1.2rem;
-	margin-top: 0.4rem;
-
 	border-bottom: 0.15rem solid #eb5e28;
+	padding: 0.2rem;
+}
 
-	.logo-container {
-		margin-left: 1rem;
+.logo-container {
+	margin-left: 0.5rem;
+}
+
+.links-container {
+	display: flex;
+	flex-shrink: 0;
+	flex-direction: row;
+	gap: 1.25rem;
+
+	&:hover {
+		cursor: pointer;
 	}
 
-	.btns-container {
-		display: flex;
-		flex-direction: row;
-		gap: 1rem;
+	div {
+		transition: 0.4s all ease-out;
 
 		&:hover {
-			cursor: pointer;
-		}
-
-		div {
-			transition: 0.4s all ease-out;
-
-			&:hover {
-				color: #eb5e28;
-			}
+			color: #eb5e28;
 		}
 	}
+}
 
-	.profile-container {
+.profile-container {
+	transition: 0.4s all ease-out;
+
+	&:hover {
+		cursor: pointer;
+		color: #eb5e28;
+	}
+
+	div {
 		display: flex;
 		gap: 0.6rem;
 		margin-right: 1rem;
 		line-height: 2rem;
 
-		span {
-			transition: 0.4s all ease-out;
-
-			&:hover {
-				cursor: pointer;
-				color: #eb5e28;
-			}
+		img {
+			border-radius: 100%;
 		}
 	}
 }

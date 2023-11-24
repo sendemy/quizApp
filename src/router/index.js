@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import App from '../App.vue'
+import CreateQuizView from '../views/CreateQuizView.vue'
+import PageNotFound from '../views/PageNotFound.vue'
+import ProfileView from '../views/ProfileView.vue'
 import QuizView from '../views/QuizView.vue'
 import QuizesView from '../views/QuizesView.vue'
-import PageNotFound from '../views/PageNotFound.vue'
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,8 +19,18 @@ const router = createRouter({
 		},
 		{
 			path: '/quiz/:id',
-			name: 'quiz',
+			name: 'Quiz',
 			component: QuizView,
+		},
+		{
+			path: '/profile',
+			name: 'Profile',
+			component: ProfileView,
+		},
+		{
+			path: '/create-quiz',
+			name: 'Create Quiz',
+			component: CreateQuizView,
 		},
 		{
 			path: '/:catchAll(.*)*',
